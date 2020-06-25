@@ -453,18 +453,20 @@ xrf.formula <- function(object, data, family,
   # glmnet automatically adds an intercept
   full_formula <- update(full_formula, . ~ . -1)
 
-  m_glm <- glmnot(full_formula, full_data,
-                    family = family,
-                    alpha = 1, # this specifies the LASSO
-                    sparse = sparse,
-                    glm_control = glm_control)
+  return(full_data)
 
-  structure(list(glm = m_glm,
-                 xgb = m_xgb,
-                 base_formula = expanded_formula,
-                 rule_augmented_formula = full_formula,
-                 rules = rules),
-            class = 'xrf')
+  # m_glm <- glmnot(full_formula, full_data,
+  #                   family = family,
+  #                   alpha = 1, # this specifies the LASSO
+  #                   sparse = sparse,
+  #                   glm_control = glm_control)
+  #
+  # structure(list(glm = m_glm,
+  #                xgb = m_xgb,
+  #                base_formula = expanded_formula,
+  #                rule_augmented_formula = full_formula,
+  #                rules = rules),
+  #           class = 'xrf')
 }
 
 #' Generate the design matrix from an eXtreme RuleFit model
