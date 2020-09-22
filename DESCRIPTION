@@ -1,4 +1,4 @@
-Package: xrf
+Package: xrftest
 Title: eXtreme RuleFit
 Version: 0.2.0
 Authors@R: person("Karl", "Holub", email = "karljholub@gmail.com", role = c("aut", "cre"))
